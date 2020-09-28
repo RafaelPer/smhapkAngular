@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CONFIGURAÇÕES
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Configurações da Conta</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form action="">
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Username</ion-label>
+          <ion-input disabled value="{{us.username}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Nome</ion-label>
+          <ion-input disabled  value="{{us.nome}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Sobrenome</ion-label>
+          <ion-input disabled  value="{{us.sobrenome}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Email</ion-label>
+          <ion-input disabled  value="{{us.email}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Celular</ion-label>
+          <ion-input disabled  value="{{us.celular}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Ativo?</ion-label>
+          <ion-toggle color="danger" disabled [checked]="us.isActive"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="tertiary">Sincronizar?</ion-label>
+          <ion-toggle color="danger" disabled [checked]="us.issync"></ion-toggle>
+        </ion-item>
+      </form>
+      <ion-button expand="full" color="danger" (click)="routerForAlterPasswd()">ALTERAR SENHA</ion-button>
+      <ion-button expand="full" color="danger" (click)="routerForAlterInfoAccount()">ALTERAR INFORMAÇÕES</ion-button>
+      <ion-button expand="full" color="dark" (click)="sincUser(us.username)">Sincronizar Usuario</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

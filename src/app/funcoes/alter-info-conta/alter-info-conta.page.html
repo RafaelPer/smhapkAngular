@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alteração de Dados da Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header color="danger">
+      <ion-card-title>Informações do Usuario</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="alterUser" (ngSubmit)="alterUsr(us.username)" novalidate>
+
+        <ion-item>
+          <ion-label position="floating">Nome do Usuario</ion-label>
+          <ion-input  clearInput="true" inputmode="text" placeholder="{{us.nome}}" type="text" formControlName="nomeUsr"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Sobrenome do Usuario</ion-label>
+          <ion-input  clearInput="true" inputmode="text" placeholder="{{us.sobrenome}}" type="text" formControlName="snUsr"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input  clearInput="true" inputmode="text" placeholder="{{us.username}}" type="text" formControlName="usernameUsr"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input  clearInput="true" inputmode="text" placeholder="{{us.email}}" type="text" formControlName="emailUsr"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="isSubmitted && errorControl.emailUsr.errors?.pattern">
+          *Email invalido
+        </ion-text>
+
+        <ion-item>
+          <ion-label position="floating">Celular</ion-label>
+          <ion-input  clearInput="true" inputmode="text" placeholder="{{us.celular}}" type="text" formControlName="celularUsr"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="isSubmitted && errorControl.celularUsr.errors?.pattern">
+          *Celular invalido
+        </ion-text>
+
+        <ion-item>
+          <ion-label>Esta Ativo?</ion-label>
+          <ion-toggle color="danger" formControlName="isActive" [checked]="us.isActive"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sera Sincronizado?</ion-label>
+          <ion-toggle color="danger" formControlName="issync" [checked]="us.issync"></ion-toggle>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Alterar Usuario</ion-button>
+        <ion-button expand="full" (click)="backToConfig()">VOLTAR</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

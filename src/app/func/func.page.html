@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      FUNÇÕES
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header color="danger">
+      <ion-card-title>Funções do Aplicativo</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+      <ion-button color="tertiary" expand="full" (click)="routerTemp()"><ion-icon name="thermometer-outline"></ion-icon>&nbsp; TEMPERATURA</ion-button>
+      <!-- <ion-button color="tertiary" expand="full" (click)="routerLuzes()"><ion-icon name="sunny-outline"></ion-icon>&nbsp; LUZES</ion-button> -->
+      <!-- <ion-button color="tertiary" expand="full" (click)="routerTomadas()"><ion-icon name="flash-outline"></ion-icon>&nbsp; TOMADAS</ion-button> -->
+      <ion-button color="tertiary" expand="full"(click)="routerAlarmes()"><ion-icon name="notifications-outline"></ion-icon>&nbsp; ALARMES</ion-button>
+      <!-- <ion-button color="tertiary" expand="full"(click)="routerArCond()"><ion-icon name="snow-outline"></ion-icon>&nbsp; AR CONDICIONADO</ion-button> -->
+      <ion-button color="tertiary" expand="full" (click)="routerNewCom()"><ion-icon name="add-circle-outline"></ion-icon>&nbsp; NOVO COMODO</ion-button>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

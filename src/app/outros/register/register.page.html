@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Criar Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
+    <ion-grid>
+      <ion-row color="tertiary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12" style="margin: 0px auto 0px auto !important;">
+          <div padding>
+            <ion-item>
+              <ion-label position="floating">Nome do Usuario</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Digite o novo nome do usuario" required="true" type="text" formControlName="nomeUsr"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.nomeUsr.errors?.required">
+              *É nescessario o nome do usuario
+            </ion-text>
+    
+            <ion-item>
+              <ion-label position="floating">Sobrenome do Usuario</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Digite o sobrenome do Usuario" required="true" type="text" formControlName="snUsr"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.snUsr.errors?.required">
+              *É nescessario o sobrenome do usuario
+            </ion-text>
+    
+            <ion-item>
+              <ion-label position="floating">Username</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Digite o username do usuario" required="true" type="text" formControlName="usernameUsr"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.usernameUsr.errors?.required">
+              *É nescessario o username
+            </ion-text>
+    
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Digite o email" required="true" type="text" formControlName="emailUsr"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.emailUsr.errors?.required">
+              *É nescessario o email
+            </ion-text>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.emailUsr.errors?.pattern">
+              *Email invalido
+            </ion-text>
+    
+            <ion-item>
+              <ion-label position="floating">Celular</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Digite o celular" required="true" type="text" formControlName="celularUsr"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.celularUsr.errors?.required">
+              *É nescessario o celular
+            </ion-text>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.celularUsr.errors?.pattern">
+              *Celular invalido
+            </ion-text>
+
+            <ion-item>
+              <ion-label position="floating">Senha</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Digite a senha" required="true" type="password" formControlName="passwd"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.passwd.errors?.required">
+              *É nescessario a senha
+            </ion-text>
+            <ion-text color="light" *ngIf="isSubmitted && (errorControl.passwd.errors?.pattern || errorControl.passwd.errors?.minLength || errorControl.passwd.errors?.maxLength)">
+              *É nescessario que a senha tenha entre 6 a 30 caracteres, pelo menos uma letra maiuscula, uma letra minuscula, um numero e um caractere especial
+            </ion-text>
+    
+            <ion-item>
+              <ion-label position="floating">Confirme a Senha</ion-label>
+              <ion-input  clearInput="true" inputmode="text" placeholder="Confirme a senha" required="true" type="password" formControlName="confirmPasswd"></ion-input>
+            </ion-item>
+            <ion-text color="light" *ngIf="isSubmitted && !registerForm.get('confirmPasswd').errors && registerForm.hasError('passwordNotMatch') && (registerForm.get('confirmPasswd').dirty || registerForm.get('confirmPasswd').touched)">
+              *A confirmação tem que ser igual a senha
+            </ion-text>
+            <ion-text color="light" *ngIf="isSubmitted && errorControl.confirmPasswd.errors?.required">
+              *Confirme a senha
+            </ion-text>
+            <ion-text color="light" *ngIf="isSubmitted && (errorControl.confirmPasswd.errors?.pattern || errorControl.confirmPasswd.errors?.minLength || errorControl.confirmPasswd.errors?.maxLength)">
+              *É nescessario que a senha tenha entre 6 a 30 caracteres, pelo menos uma letra maiuscula, uma letra minuscula, um numero e um caractere especial
+            </ion-text>
+    
+            <ion-item>
+              <ion-label>Esta Ativo?</ion-label>
+              <ion-toggle color="danger" formControlName="isActive" checked></ion-toggle>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label>Sera Sincronizado?</ion-label>
+              <ion-toggle color="danger" formControlName="issync" checked></ion-toggle>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" expand="block">Registrar</ion-button>
+            <ion-button  size="large" expand="block" routerLink='/'>Voltar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

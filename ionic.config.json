@@ -1,0 +1,7 @@
+{
+  "name": "smhapkAngular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

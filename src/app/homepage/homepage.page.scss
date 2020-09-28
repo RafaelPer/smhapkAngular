@@ -1,0 +1,62 @@
+.titleFavRoom{
+    text-align: center;
+}
+
+.subtitleFavRoom{
+    text-align: center;
+}
+
+.cardContentFavRoom{
+    padding: 0px;
+    margin: 0px;
+}
+
+.segmentFavRoom{
+    margin: 10px;
+}
+
+.slidesFavRoomConf{
+    margin: 3px;
+    //border: 1px solid black;
+    //background-color: white;
+}
+
+.tempAjustText{
+    text-align: center;
+}
+
+.listTemp{
+    width: 100%;
+    text-align: center;
+}
+
+.radioTemp{
+    background-color: rgba($color: #f4f5f8, $alpha: 1.0);
+    padding: 3px;
+}
+
+.tempAjustText{
+    font-size: large;
+}
+
+.listArCond{
+    width: 100%;
+}
+
+.itemFavRoom{
+    text-align: center;
+}
+
+.segmentMain{
+    --background: #f4f5f8;
+}
+
+.teste{
+    background: var(--ion-color-tertiary);
+    color: var(--ion-color-tertiary-contrast);
+}
+
+// .slidefavRoom{
+//     //border: 1px solid black;
+//     padding: 0px;
+// }
