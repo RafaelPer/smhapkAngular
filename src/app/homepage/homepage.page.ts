@@ -316,6 +316,8 @@ export class HomepagePage {
   logout(){
     //console.log('ttttttt');
     this.auth.logout();
+    clearInterval(this.timoutGetComByUserIDMDB);
+    clearInterval(this.timoutGetComByFavUserIDMBD);
   }
 
   async presentToast(msg) {
