@@ -21,12 +21,12 @@ export class AlterPasswdPage implements OnInit {
 
   constructor(public toastController: ToastController, private auth: AuthenticationService, private alertCtrl: AlertController, private storage: SecureStoreService, private apiService: UserService, public formBuilder: FormBuilder, public activatedRoute: ActivatedRoute, public router: Router) {
   }
-
+  //^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$
   async ngOnInit() {
     this.alterSenha = this.formBuilder.group({
       passwdAtual: ['', [Validators.required]],
-      passwdNew: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/)]],
-      passwdNewConf: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/)]],
+      passwdNew: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#¨()])[A-Za-z\d@$!%*?&#¨()]{8,30}$/)]],
+      passwdNewConf: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#¨()])[A-Za-z\d@$!%*?&#¨()]{8,30}$/)]],
     }, {validator: this.matchingPasswords.bind(this)});
     this.id = this.activatedRoute.snapshot.params.id;
     console.log(this.id);

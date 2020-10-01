@@ -25,8 +25,8 @@ export class RegisterPage implements OnInit {
       usernameUsr: ['', [Validators.required]],
       emailUsr: ['', [Validators.required, Validators.pattern(/[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]/)]],
       celularUsr: ['', [Validators.required, Validators.pattern(/(\(?\d{2}\)?\s?)?(\d{4,5}\-?\d{4})/)]],
-      passwd: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/)]],
-      confirmPasswd: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/)]],
+      passwd: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#¨()])[A-Za-z\d@$!%*?&#¨()]{8,30}$/)]],
+      confirmPasswd: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#¨()])[A-Za-z\d@$!%*?&#¨()]{8,30}$/)]],
       isActive: [true, [Validators.required]],
       issync: [true, [Validators.required]]
     }, {validator: this.matchingPasswords.bind(this)});
